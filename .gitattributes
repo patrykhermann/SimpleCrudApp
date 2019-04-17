@@ -1,2 +1,2 @@
 * linguist-vendored
-*.cs linguist-vendored=false
+*.net linguist-vendored=false
