@@ -1,0 +1,175 @@
+/* List */
+
+* {
+    font-family: "Consolas";
+}
+
+.h2 {
+    margin-top: 30px;
+}
+
+body {
+    margin: 0 auto;
+    width: 900px;
+}
+
+#customers {
+    border-collapse: collapse;
+    margin: 20px auto 0 auto;
+}
+
+#customers,
+#customers td,
+#customers th {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#customers tr:hover {
+    background-color: #ddd;
+}
+
+#customers th {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: left;
+    background-color: #656565;
+    color: white;
+}
+
+.add,
+.edit,
+.details,
+.delete {
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 5%;
+    padding: 3px 10px;
+    margin-right: 5px;
+    color: white;
+    text-decoration: none;
+    transform: scale(1);
+    transition: 0.3s;
+}
+
+.add {
+    background-color: #4FB477;
+}
+
+.edit {
+    background-color: #57B8FF;
+}
+
+.details {
+    background-color: #445E93;
+}
+
+.delete {
+    background-color: #F93943;
+    margin: 0;
+}
+
+.add:hover,
+.edit:hover,
+.details:hover,
+.delete:hover {
+    transform: scale(1.15);
+}
+
+footer {
+    margin-top: 80px;
+    text-align: right;
+}
+
+/* Add */
+
+.form-elements {
+    margin-top: 30px;
+}
+
+.group {
+    width: 300px;
+    text-align: right;
+}
+
+#confirm {
+    font-size: 16px;
+    padding: 6px 18px;
+    border-radius: 5%;
+    background-color: #2E3532;
+    border-style: none;
+    cursor: pointer;
+    transition: .3s;
+    color: white;
+}
+
+#confirm:hover {
+    transform: scale(1.1);
+}
+
+.back {
+    display: block;
+    margin-top: 100px;
+    text-decoration: none;
+    padding: 6px 12px;
+    background-color: transparent;
+    width: 40px;
+    text-align: center;
+    color: black;
+    border: 1px solid #ddd;
+    border-radius: 5%;
+    transition: .2s;
+}
+
+.back:hover {
+    background-color: #eee;
+}
+
+/* Details */
+
+#details {
+    border-style: none;
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+#details tr td:nth-child(1) {
+    font-weight: bold;
+}
+
+#details tr td {
+    padding: 5px;
+}
+
+/* delete */
+
+#delete {
+    font-size: 16px;
+    line-height: 30px;
+    border-radius: 5%;
+    padding: 3px 10px;
+    background-color: #F93943;
+    border-style: none;
+    cursor: pointer;
+    transition: .3s;
+    color: white;
+    display: inline-block;
+}
+
+#delete:hover {
+    transform: scale(1.1);
+}
+
+#decision {
+    margin-left: 50px;
+}
+
+#decision tr td .back {
+    margin: 0;
+}

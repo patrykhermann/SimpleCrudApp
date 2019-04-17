@@ -1,0 +1,26 @@
+﻿@model SimpleCrudApp.Models.Employee
+@{
+    ViewBag.Title = "Delete";
+    ViewBag.Heading = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Delete", "Manage", FormMethod.Post))
+{
+    <h3>Are you sure you want to delete @Model.FirstName @Model.LastName?</h3>
+    <table id="decision">
+        <tr>
+            <td>
+
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.EmployeeId)
+
+                <input type="submit" value="Delete" id="delete" />
+            </td>
+            <td>
+                <a href="@Url.Action("Index", "Home")" class="back">Back</a>
+            </td>
+        </tr>
+    </table>
+}
+

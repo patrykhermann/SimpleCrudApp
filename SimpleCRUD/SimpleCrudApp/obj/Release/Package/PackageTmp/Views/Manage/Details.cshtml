@@ -1,0 +1,57 @@
+﻿@model SimpleCrudApp.Models.Employee
+@{
+    ViewBag.Title = "Details";
+    ViewBag.Heading = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Model == null)
+{
+    <p style="color: red; margin-top: 75px;">Something went wrong. There is no such employee with the given id.</p>
+}
+else
+{
+    <table id="details">
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.FirstName)</td>
+            <td>@Html.DisplayFor(model => model.FirstName)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.LastName)</td>
+            <td>@Html.DisplayFor(model => model.LastName)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.Age)</td>
+            <td>@Html.DisplayFor(model => model.Age)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.Address)</td>
+            <td>@Html.DisplayFor(model => model.Address)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.Code)</td>
+            <td>@Html.DisplayFor(model => model.Code)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.City)</td>
+            <td>@Html.DisplayFor(model => model.City)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.PhoneNumber)</td>
+            <td>@Html.DisplayFor(model => model.PhoneNumber)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.Email)</td>
+            <td>@Html.DisplayFor(model => model.Email)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.Position)</td>
+            <td>@Html.DisplayFor(model => model.Position)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.Salary)</td>
+            <td>@Html.DisplayFor(model => model.Salary) zł</td>
+        </tr>
+    </table>
+}
+<a href="@Url.Action("Index", "Home")" class="back">Back</a>

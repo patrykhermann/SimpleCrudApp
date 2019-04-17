@@ -1,0 +1,45 @@
+﻿@model PagedList.IPagedList<SimpleCrudApp.Models.Employee>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "CRUD App";
+    ViewBag.Heading = "Employees";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<a href="@Url.Action("Add", "Manage")" class="add"><i class="fas fa-user-plus"></i> Add</a>
+@using (Html.BeginForm("Index", "Home", FormMethod.Get))
+{
+    <p class="p1">
+        Find by name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <button type="submit" class="search">
+            <i class="fas fa-search"></i>
+        </button>
+    </p>
+}
+
+<table id="customers">
+    <tr>
+        <th>First Name</th>
+        <th>@Html.ActionLink("Last Name", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter=ViewBag.CurrentFilter }, new { style="color: white;" })</th>
+        <th>@Html.ActionLink("Position", "Index", new { sortOrder = ViewBag.PosSortParm, currentFilter=ViewBag.CurrentFilter }, new { style="color: white;" })</th>
+        <th></th>
+    </tr>
+    @foreach (var emp in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(e => emp.FirstName)</td>
+            <td>@Html.DisplayFor(e => emp.LastName)</td>
+            <td>@Html.DisplayFor(e => emp.Position)</td>
+            <td>
+                <a href="@Url.Action("Edit", "Manage", new { id = emp.EmployeeId })" class="edit"><i class="fas fa-user-edit"></i>Edit</a>
+                <a href="@Url.Action("Details", "Manage", new { id = emp.EmployeeId })" class="details"><i class="fas fa-user"></i> Details</a>
+                <a href="@Url.Action("Delete", "Manage",  new { id = emp.EmployeeId })" class="delete"><i class="fas fa-user-minus"></i> Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+<br />
+@*Page@(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount*@
+
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFFilter = ViewBag.CurrentFilter  }))

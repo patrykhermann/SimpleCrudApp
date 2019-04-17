@@ -1,0 +1,74 @@
+﻿@model SimpleCrudApp.Models.Employee
+@{
+    ViewBag.Title = "Edit";
+    ViewBag.Heading = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Edit", "Manage", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(model => model.EmployeeId)
+
+    <table class="form-elements">
+        <tr class="group">
+            <td>@Html.LabelFor(model => model.FirstName)</td>
+            <td>@Html.TextBoxFor(model => model.FirstName, new { style = "margin-left: 30px;" })</td>
+            <td>@Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "error" })</td>
+        </tr>
+        <tr class="group">
+            <td>@Html.LabelFor(model => model.LastName)</td>
+            <td>@Html.TextBoxFor(model => model.LastName, new { style = "margin-left: 30px;" })</td>
+            <td>@Html.ValidationMessageFor(model => model.LastName, "", new { @class = "error" })</td>
+        </tr>
+        <tr class="group">
+            <td>@Html.LabelFor(model => model.Age)</td>
+            <td>@Html.TextBoxFor(model => model.Age, new { style = "margin-left: 30px;" })</td>
+            <td>@Html.ValidationMessageFor(model => model.Age, "", new { @class = "error" })</td>
+        </tr>
+        <tr class="group">
+            <td>@Html.LabelFor(model => model.Address)</td>
+            <td>@Html.TextBoxFor(model => model.Address, new { style = "margin-left: 30px;" })</td>
+            <td>@Html.ValidationMessageFor(model => model.Address, "", new { @class = "error" })</td>
+        </tr>
+        <tr class="group">
+            <td>@Html.LabelFor(model => model.Code)</td>
+            <td>@Html.TextBoxFor(model => model.Code, new { style = "margin-left: 30px;" })</td>
+            <td>@Html.ValidationMessageFor(model => model.Code, "", new { @class = "error" })</td>
+        </tr>
+        <tr class="group">
+            <td>@Html.LabelFor(model => model.City)</td>
+            <td>@Html.TextBoxFor(model => model.City, new { style = "margin-left: 30px;" })</td>
+            <td>@Html.ValidationMessageFor(model => model.City, "", new { @class = "error" })</td>
+        </tr>
+        <tr class="group">
+            <td>@Html.LabelFor(model => model.PhoneNumber)</td>
+            <td>@Html.TextBoxFor(model => model.PhoneNumber, new { style = "margin-left: 30px;" })</td>
+            <td>@Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "error" })</td>
+        </tr>
+        <tr class="group">
+            <td>@Html.LabelFor(model => model.Email)</td>
+            <td>@Html.TextBoxFor(model => model.Email, new { style = "margin-left: 30px;" })</td>
+            <td>@Html.ValidationMessageFor(model => model.Email, "", new { @class = "error" })</td>
+        </tr>
+        <tr class="group">
+            <td>@Html.LabelFor(model => model.Position)</td>
+            <td>@Html.TextBoxFor(model => model.Position, new { style = "margin-left: 30px;" })</td>
+            <td>@Html.ValidationMessageFor(model => model.Position, "", new { @class = "error" })</td>
+        </tr>
+        <tr class="group">
+            <td>@Html.LabelFor(model => model.Salary)</td>
+            <td>@Html.TextBoxFor(model => model.Salary, new { style = "margin-left: 30px;" })</td>
+            <td>@Html.ValidationMessageFor(model => model.Salary, "", new { @class = "error" })</td>
+        </tr>
+        <tr class="group" style="text-align: right;">
+            <td colspan="2">
+                <input type="submit" value="Edit" id="confirm" />
+            </td>
+        </tr>
+    </table>
+}
+
+<a href="@Url.Action("Index", "Home")" class="back">Back</a>
+
